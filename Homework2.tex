@@ -1,0 +1,290 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Do not alter this block (unless you're familiar with LaTeX
+\documentclass{article}
+\usepackage[margin=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb,amsfonts, fancyhdr, color, comment, graphicx, environ,latexsym}
+\usepackage[utopia]{mathdesign}
+\usepackage{tikz-cd}
+\tikzcdset{scale cd/.style={every label/.append style={scale=#1},
+    cells={nodes={scale=#1}}}}
+\usepackage{xcolor}
+\usepackage{mdframed}
+\usepackage{mathrsfs}
+\usepackage[shortlabels]{enumitem}
+\usepackage{indentfirst}
+\usepackage{hyperref}
+\usepackage{dsfont}
+\colorlet{shadecolor}{orange!15}
+\parindent 0in
+\parskip 12pt
+\geometry{margin=1in, headsep=0.25in}
+\theoremstyle{definition}
+\newtheorem*{defn*}{Definition}
+\newtheorem*{ defn* }{ Definition }
+\newtheorem{reg}{Rule}
+\newtheorem{exer}{Exercise}
+\newtheorem{note}{Note}
+\newtheorem*{cor*}{Corollary}
+\newtheorem{lemma}{Lemma}
+\newtheorem*{lemma*}{Lemma}
+\newtheorem*{theorem*}{Theorem}
+\newtheorem{theorem}{Theorem}
+\newtheorem{exam}{Example}
+\newtheorem{sublemma}{Lemma}[lemma]
+\newcommand\N{\mathds{N}}
+\newcommand\R{\mathds{R}}
+\newcommand\Q{\mathds{Q}}
+\newcommand\Z{\mathds{Z}}
+\newcommand\C{\mathds{C}}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=blue,
+}
+
+
+\pagestyle{fancy}
+
+
+\newenvironment{problem}[2][Problem]
+    { \begin{mdframed}[backgroundcolor=gray!20] \textbf{#1 #2} \\}
+    {  \end{mdframed}}
+
+% Define solution environment
+\newenvironment{solution}{\textbf{Solution}}{%
+     \hfill$\blacksquare$\par\medskip}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Fill in the appropriate information below
+\lhead{Peter Sun}
+\rhead{Math 110C} % Class name 
+\chead{\textbf{Homework 2}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+    \begin{problem}{10}
+    
+    
+    If $f \in \mathds{Q}\left[ t \right]$ and $K$ is a splitting field of $f$ over $\mathds{Q}$, determine $\left[ K : \mathds{Q} \right]$ if $f$ is 
+
+    (a) $t^{4} + 1$.
+
+    (b) $t^{6} + 1$.
+
+    (c) $t^{4} - 2$. 
+
+    (d) $t^{6} - 2$.
+
+    (e) $t^{6} + t^{3} + 1$.
+    
+    \end{problem}
+    
+    \begin{solution}
+    
+    (a) We see that 
+    \begin{align*}
+        t^{4} + 1 &= \left( t^{2} + i \right)\left( t^{2}-i \right) \\
+        &= \left( t- e^{\frac{3}{4}\pi i} \right) \left( t+e^{\frac{3}{4}\pi i} \right) \left( t - e^{\frac{1}{4} \pi i} \right) \left( t + e^{\frac{1}{4} \pi i} \right). \\
+    \end{align*}
+    We see that we can get all the other roots from $e^{\frac{\pi}{4}i}$. Since $t^{4} + 1$ is irreducible, $\left[ K : \mathds{Q} \right] = 4$.
+
+    (b) We see that 
+    \begin{align*}
+        t^{6} + 1 &= \left( t^{2} \right)^{3} + 1  \\
+        &= \left( t^{2} + 1 \right)\left( t^{4} -t^{2} + 1 \right) \\
+        &= \left( t + i \right)\left( t-i \right) \left( t + a \right)\left( t-a \right) \left( t+\overline{a} \right)\left( t-\overline{a} \right), \\
+    \end{align*}
+    where $a = \frac{1 + \sqrt{-3} }{2} = e^{i \frac{\pi}{6}}$. Since $i = a^{3}$, we see that we just need to adjoin $a$, with $m_{\mathds{Q}}\left( a \right) = t^{4} - t^{2} + 1$, and $\left[ K : \mathds{Q} \right] = 4$.
+
+    (c) We see that 
+    \begin{align*}
+        t^{4} - 2 &= \left( t^{2} + \sqrt{2}  \right)\left( t^{2} - \sqrt{2}  \right) \\
+        &= \left( t-\sqrt[4]{2}  \right)\left( t + \sqrt[4]{2}  \right)\left( t- i \sqrt[4]{2}  \right)\left( t + i\sqrt[4]{2}  \right). \\
+    \end{align*}
+    We simply adjoin $\sqrt[4]{2} $ and $i$ to see that $\left[ K : \mathds{Q} \right] = 4 \cdot 2 = 8$.
+
+    (d) We see that 
+    
+    
+    \end{solution}
+    
+    \begin{problem}{11}
+    
+    Find the splitting field $K$ for $f \in \mathds{Q}\left[ t \right]$ and $\left[ K : \mathds{Q} \right]$ if $f$ is:
+    
+    (a) $t^{4} - 5t^{2} + 6$,
+    
+    (b) $t^{6} - 1$,
+    
+    (c) $t^{6} - 8$.
+    
+    \end{problem}
+    
+    \begin{solution}
+    
+    
+    
+    
+    \end{solution}
+    
+    \begin{problem}{12}
+    
+    Let $F = \mathds{Z} / p\mathds{Z}$. Show that:
+
+    (a) There exists $f \in F\left[ t \right]$ with $\deg f = 2$ and $f$ irreducible. 
+
+    (b) Use the $f$ in part (a) to construct a field with $p^{2}$ elements.
+
+    (c) If $f_1, f_2 \in F\left[ t \right]$ have $\deg f_i = 2$ and $f_i$ irreducible for $i = 1,2$, show that their splitting fields are isomorphic. 
+    
+    \end{problem}
+    
+    \begin{solution}
+    
+    
+    
+    \end{solution}
+    
+    \begin{problem}{13}
+    
+    Let $K / F$ and $f \in F \left[ t \right]$. Show the following:
+    
+    (a) If $\varphi: K \to  K$ is an $F$-automorphism, then $\varphi$ takes roots of $f$ in $K$ to roots of $f$ in $K$.
+
+    (b) If $F \subseteq \mathds{R}$ and $\alpha = a + ib$ is a root of $f$ with $a,b \in \mathds{R}$, then $\overline{\alpha} = a - ib$ is also a root of $f$.
+
+    (c) Let $F = \mathds{Q}$. If $m \in \mathds{Z}$ is not a square and $a + b\sqrt{m}  \in \mathds{C}$ is a root of $f$ with $a,b \in \mathds{Q}$, then $a-b\sqrt[]{m} $ is also a root of $f$ in $\mathds{C}$.
+
+    \end{problem}
+    
+    \begin{solution}
+    
+    (a) 
+    
+    (b) It is clear by the following:
+    \begin{align*}
+        f\left( \overline{\alpha} \right) &= \sum_{i = 0}^{n} a_{i} \overline{\alpha ^{i}}\\
+        &= \overline{ \sum_{i = 0}^{n}a_{i} \alpha ^{i}} \\
+        &= \overline{f\left( \alpha \right)} \\
+        &= 0. \\
+    \end{align*}
+
+    (c)
+    
+    \end{solution}
+    
+    \begin{problem}{14}
+    
+    Prove any (field) automorphism $\varphi : \mathds{R} \to  \mathds{R}$ is the identity automorphism.
+    
+    \end{problem}
+    
+    \begin{solution}
+    
+    We see that $\varphi\left( \frac{p}{q} \right) = \frac{\varphi\left( p \right)}{\varphi\left( q \right)} = \frac{p\varphi\left( 1 \right)}{q\varphi\left( 1 \right)}=\frac{p}{q}$. We see that for all $a$ positive reals, we have that $a = b^{2}$ for some $b$ real number. This means that $\varphi\left( a \right) = \left( \varphi\left( b \right) \right)^{2} > 0$. By the density of rationals, we have have that there ar always $q_1,q_2 \in \mathds{Q}$ epsilon close such that $q_1 < r < q_2$ for all $r$ real. Then, we see that 
+    \begin{align*}
+        \varphi\left( q_1 - r \right) < 0 < \varphi\left( q_2 - r \right)
+    \end{align*}
+    and thus
+    \begin{equation*}
+        \varphi\left( q_1 \right) < \varphi\left( r \right) < \varphi\left( q_2 \right)
+    \end{equation*}
+    and
+    \begin{equation*}
+        q_1 < \varphi\left( r \right) < q_2
+    \end{equation*}
+    and thus deduce that $\varphi\left( r \right) = r$.
+    
+    
+    \end{solution}
+    
+    \begin{problem}{15}
+    
+    Let $p_1,\ldots,p_n$ be $n$ distinct prime numbers. Let $f = \left( t^{2} - p_1 \right) \cdots \left( t^{2} - p_n \right) \in \mathds{Q}\left[ t \right]$. Show that $K = \mathds{Q}\left[ \sqrt{p_1} ,\ldots,\sqrt{p_n} \right]$ is a splitting field of $f$ over $\mathds{Q}$ and $\left[ K : \mathds{Q} \right] = 2^{n}$. Formulate a generalization of the statement for which your proof still works
+
+    
+    \end{problem}
+    
+    \begin{solution}
+    
+    It is clear that $f$ splits in $K$. Since $p_1,\ldots,p_n$ are prime, we see that $\sqrt{p_i}  \not\in \mathds{Q}\left[ \sqrt{p_1} ,\ldots,\widehat{\sqrt{p_i} },\ldots,\sqrt{p_n}   \right]$. Thus, $K$ is minimal. We see that $t^{2} - p_i = m_{\mathds{Q}}\left( p_i \right)$ irreducible, so $\left[ K : \mathds{Q} \right] = \left[ K : \mathds{Q}\left[ \sqrt{q_1},\ldots,\sqrt{q_{n-1}}  \right] \right]\cdots \left[ \mathds{Q}\left[ \sqrt{q_1}  \right]: \mathds{Q} \right] = 2^{n}$.
+    
+    \end{solution}
+    
+    \begin{problem}{16}
+    
+    Find a splitting field of $f \in F \left[ t \right]$ if $F = \mathds{Z} / p\mathds{Z}$ and $f = t^{p^{e}} - t, e > 0$.
+    
+    \end{problem}
+    
+    \begin{solution}
+    
+    
+    
+    \end{solution}
+    
+    \begin{problem}{17}
+    
+    Let $F$ be a field of characteristic $p > 0$. Show that $f = t^{4} + 1$ is not irreducible. Let $K$ be a splitting field of $f$ over $F$. Determine which finite field $F$ must contain so that $K = F$.
+    
+    \end{problem}
+    
+    \begin{solution}
+    
+    
+    
+    \end{solution}
+    
+    \begin{problem}{18}
+    
+    Let $f = t^{6} - 3 \in F\left[ k \right]$. Construct a splitting field $K$ of $f$ over $F$ and determine $\left[ K : F \right]$ for each of the cases: $F = \mathds{Q}, \mathds{Z} / 5\mathds{Z}$, or $\mathds{Z} / 7\mathds{Z}$. Do the same thing if $f$ is replaced by $g = t^{6} + 3 \in F\left[ t \right]$.
+    
+    \end{problem}
+    
+    \begin{solution}
+    
+    
+    
+    \end{solution}
+    
+    \begin{problem}{19}
+    
+    Show the following:
+    
+    (a) If $f \in F\left[ t \right]$, $\operatorname{char} F = 0$, and the derivative $f' = 0$, then $f \in F$.
+
+    (b) If $\operatorname{char} F = p \neq 0, f \in F\left[ t \right]$, and $f' = 0$, then there exists $g \in F\left[ t \right]$ such that $f\left( t \right) = g\left( t^{p} \right)$.
+    
+    \end{problem}
+    
+    \begin{solution}
+    
+    (a) Let $f = \sum_{i = 0}^{n} a_{i}t^{i}$. Then, we have that $f' = \sum_{i = 1}^{n} ia_{i}t^{i-1}$. Since $\operatorname{char}F = 0$, $a_i = 0$ for all $i >0$. Thus, $f \in F$.
+
+    (b) As before, let $f = a_0 + a_1t + \ldots + a_nt^{n}$. Then, $f' = a_1 + 2a_2t + \ldots + na_nt^{n-1} = 0$. Thus, $i a_i = 0$ for all $i > 0$. Then, for all $p \not| i$, we see that $a_i = 0$. Thus, 
+    \begin{equation*}
+        f = \sum_{p | i}^{\infty} a_i t^{i}= a_0 + a_{p}t^{p} + a_{2p}t^{2p} + \ldots = a_0 + a_{p}\left( t^{p} \right) + a_{2p}  \left( t^{p} \right)^{2} + \ldots
+    \end{equation*}
+    And it is clear what we should take $g \in F\left[ t \right]$ to be. 
+    
+    \end{solution}
+    
+    \begin{problem}{20}
+    
+    Show that if $x$ is transcendental over $F$, then $t^{2} -x \in F\left( x \right)\left[ t \right]$ is irreducible.
+    
+    \end{problem}
+    
+    \begin{solution}
+    
+    Let $K = F\left( x \right)$, let $f = t^{2} -x \in K\left[ t \right]$. We see that $\left[ K : F \right]$ is infinite dimensional. 
+    
+    \end{solution}
+    
+    
+
+\end{document}
